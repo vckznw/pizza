@@ -1,0 +1,20 @@
+development:
+  adapter: postgresql
+  database: pizza
+  username: postgres
+  password: kenzoa408
+  host: 127.0.0.1
+
+test:
+  adapter: postgresql
+  database: pizza
+  username: postgres
+  password: kenzoa408
+  host: 127.0.0.1
+
+production:
+  adapter: postgresql
+  database: pizza
+  username: postgres
+  password: kenzoa408
+  host: 127.0.0.1
