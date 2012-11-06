@@ -1,6 +1,12 @@
 Pizza::Application.routes.draw do
+  resources :cliente
+  resources :sessions, only: [:new, :create, :destroy]
+
   root to: 'static_pages#home'
 
+  match '/signup', to: 'cliente#new'
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
   match '/help',    to: 'static_pages#help'
   match '/contact', to: 'static_pages#contact'
 

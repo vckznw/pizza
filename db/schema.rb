@@ -11,14 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121102140724) do
+ActiveRecord::Schema.define(:version => 20121106200535) do
 
   create_table "cliente", :id => false, :force => true do |t|
-    t.string  "email",       :limit => 40
-    t.string  "usuario",     :limit => 20
-    t.string  "senha",       :limit => 12
-    t.integer "fkcodpessoa",               :null => false
+    t.string  "email",          :limit => 40
+    t.string  "usuario",        :limit => 20
+    t.string  "senha",          :limit => 12
+    t.integer "fkcodpessoa",                  :null => false
+    t.string  "remember_token"
   end
+
+  add_index "cliente", ["remember_token"], :name => "index_cliente_on_remember_token"
 
   create_table "codigocontabil", :primary_key => "codcontabil", :force => true do |t|
     t.string "nome", :limit => 30, :null => false
